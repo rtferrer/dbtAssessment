@@ -27,7 +27,7 @@ aggregated as (
         sum(case when payment_status = 'success' then payment_amount else 0 end) as total_revenue,
         avg(case when payment_status = 'success' then payment_amount else null end) as avg_order_value,
         count_if(payment_status = 'success') as successful_payments,
-        count_if(payment_status = 'failed')  as failed_payments
+        count_if(payment_status = 'fail')  as failed_payments
     from joined
     group by payment_date
 ),

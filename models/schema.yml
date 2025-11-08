@@ -29,7 +29,7 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: status
+      - name: order_status
         data_tests:
           - accepted_values:
               arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
@@ -41,8 +41,8 @@ models:
               arguments:
                 to: ref('stg_customers')
                 field: customer_id
-
-# Added below for my assessment submission:
+                
+  # Added below for my assessment submission:
   - name: stg_payments
     description: This model cleans Stripe payment data
     columns:
