@@ -41,3 +41,24 @@ models:
               arguments:
                 to: ref('stg_customers')
                 field: customer_id
+
+# Added below for my assessment submission:
+  - name: stg_payments
+    description: This model cleans Stripe payment data
+    columns:
+      - name: payment_id
+        description: Primary key
+        data_tests:
+          - not_null
+
+  - name: rpt_daily_revenue
+    description: Aggregated daily revenue and payment metrics from Stripe + Orders data
+    columns:
+      - name: payment_date
+        description: Transaction date 
+        data_tests:
+          - not_null
+      - name: total_revenue
+        description: Sum of successful payments per day
+      - name: payment_success_rate
+        description: Percentage of successful payments vs total payments
