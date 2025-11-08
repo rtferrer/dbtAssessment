@@ -8,3 +8,12 @@ sources:
             description: One record per customer.
           - name: orders
             description: One record per order. Includes cancelled and deleted orders.
+            
+    # Added below for my assessment submission:
+    - name: stripe
+      description: Stripe payment data
+      database: raw
+      schema: stripe
+      tables:
+        - name: payment
+          description: Payment records. Success and Fail status
